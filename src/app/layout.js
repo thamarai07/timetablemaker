@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="/path-to-image.jpg" /> {/* Add your image URL */}
         <meta property="og:url" content="https://tabletimeing.netlify.app/" />  {/* Update with your website */}
         <meta property="og:type" content="website" />
-
+        <meta name="google-site-verification" content="e4pplODfxnOVfi3dL36asP0vCLm2xHNMMISDy-KzGfg" />
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
