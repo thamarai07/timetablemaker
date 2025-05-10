@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Head from "next/head"; // Import Head for managing the head tags
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,57 +15,87 @@ export const metadata = {
   title: "Timetable Maker | Create and Manage Timetables",
   description:
     "Create, manage, and customize your timetable with ease using our intuitive timetable maker.",
-  keywords:
-    "timetable maker, create timetable, manage timetable, student timetable, teacher timetable",
-  author: "Your Name", // Replace with your name or organization
+  keywords: [
+    "timetable maker",
+    "create timetable",
+    "manage timetable",
+    "student timetable",
+    "teacher timetable",
+  ],
+  authors: [{ name: "tabletimeing" }],
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://tabletimeing.netlify.app/",
+  },
+  openGraph: {
+    title: "Timetable Maker | Create and Manage Timetables",
+    description:
+      "Easily create and manage your class schedules with our free Timetable Maker. Perfect for students and teachers.",
+    url: "https://tabletimeing.netlify.app/",
+    siteName: "Timetable Maker",
+    images: [
+      {
+        url: "https://tabletimeing.netlify.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Timetable Maker Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Timetable Maker | Create and Manage Timetables",
+    description:
+      "Create and manage your timetable effortlessly with our free tool.",
+    images: ["https://tabletimeing.netlify.app/twitter-image.jpg"],
+    creator: "@tabletimeing",
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Timetable Maker",
+  description:
+    "A free online tool to create and manage timetables for students and teachers.",
+  url: "https://tabletimeing.netlify.app/",
+  applicationCategory: "Education",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  creator: {
+    "@type": "Organization",
+    name: "tabletimeing",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        {/* Basic SEO Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
-        <meta name="author" content={metadata.author} />
-        <link rel="canonical" href="https://tabletimeing.netlify.app/" />
-        {/* Open Graph Tags for Social Media */}
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="/path-to-image.jpg" />{" "}
-        {/* Add your image URL */}
+      <head>
+        {/* Verification Tag */}
         <meta
-          property="og:url"
-          content="https://tabletimeing.netlify.app/"
-        />{" "}
-        {/* Update with your website */}
-        <meta property="og:type" content="website" />
-        <meta name="google-site-verification" content="e4pplODfxnOVfi3dL36asP0vCLm2xHNMMISDy-KzGfg" />
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="/path-to-image.jpg" />{" "}
-        {/* Add your image URL */}
-        {/* Structured Data with JSON-LD */}
+          name="google-site-verification"
+          content="e4pplODfxnOVfi3dL36asP0vCLm2xHNMMISDy-KzGfg"
+        />
+
+        {/* Favicon and Manifest */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              name: metadata.title,
-              description: metadata.description,
-              url: "https://tabletimeing.netlify.app/", // Replace with actual URL
-              publisher: {
-                "@type": "Organization",
-                name: "Your Organization", // Replace with your organization name
-              },
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-      </Head>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
