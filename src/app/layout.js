@@ -28,12 +28,13 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="author" content={metadata.author} />
+        <link rel="canonical" href="https://tabletimeing.netlify.app/" />
 
         {/* Open Graph Tags for Social Media */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:image" content="/path-to-image.jpg" /> {/* Add your image URL */}
-        <meta property="og:url" content="https://yourwebsite.com" />  {/* Update with your website */}
+        <meta property="og:url" content="https://tabletimeing.netlify.app/" />  {/* Update with your website */}
         <meta property="og:type" content="website" />
 
         {/* Twitter Card Tags */}
@@ -51,7 +52,7 @@ export default function RootLayout({ children }) {
               "@type": "WebPage",
               name: metadata.title,
               description: metadata.description,
-              url: "https://yourwebsite.com", // Replace with actual URL
+              url: "https://tabletimeing.netlify.app/", // Replace with actual URL
               publisher: {
                 "@type": "Organization",
                 name: "Your Organization", // Replace with your organization name
