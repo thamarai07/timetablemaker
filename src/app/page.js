@@ -154,7 +154,7 @@ export default function TimetableMaker() {
                   checked={useClientTimeSlot}
                   onChange={(e) => setUseClientTimeSlot(e.target.checked)}
                 />
-                <span>Use you'r own time slot</span>
+                <span>Use your own time slot</span>
               </label>
               {useClientTimeSlot ? (
                 <TextInput
