@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tabletimeing.netlify.app/
+
+# Sitemaps
+Sitemap: https://tabletimeing.netlify.app/sitemap.xml
